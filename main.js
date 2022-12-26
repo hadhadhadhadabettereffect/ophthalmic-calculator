@@ -59,3 +59,14 @@ function dioptersToInches(y) {
     if (y <= -60 || y >= 60 || y == 0) return "input must be between -60 and 60";
     return (100 / (2.54 * y)).toFixed(2);
 }
+
+function radiusToK(y) {
+    if (y <= 4 || y >= 10) return "input must be between 4 and 10";
+    return (337.5 / y).toFixed(2);
+}
+
+function kToRadius(y) {
+    if (y <= 20 || y >= 70) return "input must be between 20 and 70";
+    return (337.5 / y).toFixed(2);
+}
+
