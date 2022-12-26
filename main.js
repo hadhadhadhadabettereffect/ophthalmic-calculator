@@ -18,6 +18,14 @@ document.getElementById("button_d").addEventListener("click", function (event) {
     requestAnimationFrame(outputDioptersToInches);
 });
 
+document.getElementById("button_e").addEventListener("click", function (event) {
+    requestAnimationFrame(outputRadiusToK);
+});
+
+document.getElementById("button_f").addEventListener("click", function (event) {
+    requestAnimationFrame(outputKToRadius);
+});
+
 
 function outputCmToDiopters() {
     const result = cmToDiopters(input.value);
@@ -36,6 +44,16 @@ function outputDioptersToCm() {
 
 function outputDioptersToInches() {
     const result = dioptersToInches(input.value);
+    output.innerText = result;
+}
+
+function outputRadiusToK() {
+    const result = radiusToK(input.value);
+    output.innerText = result;
+}
+
+function outputKToRadius() {
+    const result = kToRadius(input.value);
     output.innerText = result;
 }
 
