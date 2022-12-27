@@ -1,6 +1,7 @@
 const input_y = document.getElementById("input_y");
 const input_z = document.getElementById("input_z");
 const output = document.getElementById("output");
+const modal = document.getElementById("modal_wrap");
 
 
 document.getElementById("button_a").addEventListener("click", function (event) {
@@ -70,7 +71,7 @@ function handleNearPD() {
     }
     if (!input_z.value) {
         output.innerText = "";
-        input_z.style.display = "block";
+        modal.style.display = "block";
         input_z.focus();
     } else {
         const result = nearPD(input_y.value, input_z.value);

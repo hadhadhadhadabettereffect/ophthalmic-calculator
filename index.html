@@ -10,7 +10,6 @@
 <body>
     <h1>Ophthalmic Calculator</h1>
     <input id="input_y" type="number" />
-    <input id="input_z" type="number" />
     <div id="output"></div>
     <div class="buttonGroup">
         <h2>Diopter vs Focal Distance</h2>
@@ -32,6 +31,15 @@
         <h2>Vertex Calculations</h2>
         <button id="button_h">To Contact Lens</button>
         <button id="button_i">To Spectacle</button>
+    </div>
+    <div id="modal_wrap">
+        <div id="modal">
+            <div id="close_modal">X</div>
+            <div id="y_value"></div>
+            <input id="input_z" type="number" />
+            <button id="calculate">Calculate</button>
+            <div id="modal_output"></div>
+        </div>
     </div>
 </body>
 </html>

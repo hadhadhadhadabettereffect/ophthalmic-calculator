@@ -4,6 +4,22 @@ button {
     font-weight: bold;
 }
 
-#input_z {
+#modal_wrap {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(9,0,0,0.8);
+}
+
+#modal {
+    margin: 10% auto 0;
+    display: block;
+    position: relative;
+    width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
 }
