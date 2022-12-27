@@ -1,4 +1,4 @@
-const input = document.getElementById("input_y");
+const input_y = document.getElementById("input_y");
 const input_z = document.getElementById("input_z");
 const output = document.getElementById("output");
 
@@ -33,37 +33,37 @@ document.getElementById("button_g").addEventListener("click", function (event) {
 
 
 function outputCmToDiopters() {
-    const result = cmToDiopters(input.value);
+    const result = cmToDiopters(input_y.value);
     output.innerText = result;
 }
 
 function outputInchesToDiopters() {
-    const result = inchesToDiopters(input.value);
+    const result = inchesToDiopters(input_y.value);
     output.innerText = result;
 }
 
 function outputDioptersToCm() {
-    const result = dioptersToCm(input.value);
+    const result = dioptersToCm(input_y.value);
     output.innerText = result;
 }
 
 function outputDioptersToInches() {
-    const result = dioptersToInches(input.value);
+    const result = dioptersToInches(input_y.value);
     output.innerText = result;
 }
 
 function outputRadiusToK() {
-    const result = radiusToK(input.value);
+    const result = radiusToK(input_y.value);
     output.innerText = result;
 }
 
 function outputKToRadius() {
-    const result = kToRadius(input.value);
+    const result = kToRadius(input_y.value);
     output.innerText = result;
 }
 
 function handleNearPD() {
-    const y = input.value;
+    const y = input_y.value;
     if (y <= 10 || y >= 80) {
         output.innerText = "y input must be between 10 and 80";
         return;
@@ -73,7 +73,7 @@ function handleNearPD() {
         input_z.style.display = "block";
         input_z.focus();
     } else {
-        const result = nearPD(input.value, input_z.value);
+        const result = nearPD(input_y.value, input_z.value);
         output.innerText = result;
     }
 }
