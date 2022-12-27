@@ -1,4 +1,5 @@
 const input = document.getElementById("input_y");
+const input_z = document.getElementById("input_z");
 const output = document.getElementById("output");
 
 
@@ -25,6 +26,10 @@ document.getElementById("button_e").addEventListener("click", function (event) {
 document.getElementById("button_f").addEventListener("click", function (event) {
     requestAnimationFrame(outputKToRadius);
 });
+
+document.getElementById("button_g").addEventListener("click", function (event) {
+    requestAnimationFrame(handleNearPD);
+})
 
 
 function outputCmToDiopters() {
@@ -55,6 +60,22 @@ function outputRadiusToK() {
 function outputKToRadius() {
     const result = kToRadius(input.value);
     output.innerText = result;
+}
+
+function handleNearPD() {
+    const y = input.value;
+    if (y <= 10 || y >= 80) {
+        output.innerText = "y input must be between 10 and 80";
+        return;
+    }
+    if (!input_z.value) {
+        output.innerText = "";
+        input_z.style.display = "block";
+        input_z.focus();
+    } else {
+        const result = nearPD(input.value, input_z.value);
+        output.innerText = result;
+    }
 }
 
 
@@ -88,3 +109,9 @@ function kToRadius(y) {
     return (337.5 / y).toFixed(2);
 }
 
+function nearPD(y, z) {
+    if (y <= 10 || y >= 80) return "y input must be between 10 and 80";
+    if (z <= 9 || z >= 90) return "z input must be between 9 and 90";
+    const inset = ((y / 2) * 27) / ((10 * z) + 27);
+    return (y - (2 * inset)).toFixed(2);
+}
