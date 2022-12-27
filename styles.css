@@ -1,3 +1,9 @@
+button {
+    padding: 8px 16px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 #input_z {
     display: none;
 }
