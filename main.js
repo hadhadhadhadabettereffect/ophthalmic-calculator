@@ -2,7 +2,9 @@ const input_y = document.getElementById("input_y");
 const input_z = document.getElementById("input_z");
 const output = document.getElementById("output");
 const modal = document.getElementById("modal_wrap");
+const modal_description = document.getElementById("modal_description");
 
+let current_modal = "pd";
 
 document.getElementById("button_a").addEventListener("click", function (event) {
     requestAnimationFrame(outputCmToDiopters);
@@ -70,9 +72,8 @@ function handleNearPD() {
         return;
     }
     if (!input_z.value) {
-        output.innerText = "";
-        modal.style.display = "block";
-        input_z.focus();
+        current_modal = "pd";
+        setupModal();
     } else {
         const result = nearPD(input_y.value, input_z.value);
         output.innerText = result;
@@ -125,4 +126,21 @@ function closeModal() {
 function actuallyCloseModal() {
     modal.style.display = "none";
     input_y.focus();
+}
+
+
+function setupModal() {
+    switch (current_modal) {
+        case "pd":
+            modal_description.innerText = "Enter Working Distance (cm):";
+            break;
+
+        case "contact":
+        case "spectacle":
+            modal_description.innerText = "Enter Vertext Distance (mm)";
+            break;
+    }
+    output.innerText = "";
+    modal.style.display = "block";
+    input_z.focus();
 }
