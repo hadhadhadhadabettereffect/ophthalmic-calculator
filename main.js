@@ -37,38 +37,38 @@ document.getElementById("button_g").addEventListener("click", function (event) {
 
 function outputCmToDiopters() {
     const result = cmToDiopters(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function outputInchesToDiopters() {
     const result = inchesToDiopters(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function outputDioptersToCm() {
     const result = dioptersToCm(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function outputDioptersToInches() {
     const result = dioptersToInches(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function outputRadiusToK() {
     const result = radiusToK(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function outputKToRadius() {
     const result = kToRadius(input_y.value);
-    output.innerText = result;
+    output.textContent = result;
 }
 
 function handleNearPD() {
     const y = input_y.value;
     if (y <= 10 || y >= 80) {
-        output.innerText = "y input must be between 10 and 80";
+        output.textContent = "y input must be between 10 and 80";
         return;
     }
     if (!input_z.value) {
@@ -76,7 +76,7 @@ function handleNearPD() {
         setupModal();
     } else {
         const result = nearPD(input_y.value, input_z.value);
-        output.innerText = result;
+        output.textContent = result;
     }
 }
 
@@ -132,15 +132,15 @@ function actuallyCloseModal() {
 function setupModal() {
     switch (current_modal) {
         case "pd":
-            modal_description.innerText = "Enter Working Distance (cm):";
+            modal_description.textContent = "Enter Working Distance (cm):";
             break;
 
         case "contact":
         case "spectacle":
-            modal_description.innerText = "Enter Vertext Distance (mm)";
+            modal_description.textContent = "Enter Vertext Distance (mm)";
             break;
     }
-    output.innerText = "";
+    output.textContent = "";
     modal.style.display = "block";
     input_z.focus();
 }
