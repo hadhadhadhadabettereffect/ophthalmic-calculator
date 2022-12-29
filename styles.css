@@ -19,6 +19,7 @@ button {
     display: block;
     position: relative;
     width: 500px;
+    max-width: 80%;
     background: white;
     padding: 30px;
     border-radius: 8px;
