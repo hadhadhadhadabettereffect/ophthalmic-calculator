@@ -23,3 +23,12 @@ button {
     padding: 30px;
     border-radius: 8px;
 }
+
+#close_modal {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 40px;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+}

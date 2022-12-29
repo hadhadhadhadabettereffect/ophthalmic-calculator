@@ -116,3 +116,13 @@ function nearPD(y, z) {
     const inset = ((y / 2) * 27) / ((10 * z) + 27);
     return (y - (2 * inset)).toFixed(2);
 }
+
+
+function closeModal() {
+    requestAnimationFrame(actuallyCloseModal);
+}
+
+function actuallyCloseModal() {
+    modal.style.display = "none";
+    input_y.focus();
+}
