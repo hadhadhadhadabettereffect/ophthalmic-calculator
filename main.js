@@ -148,7 +148,7 @@ function setupModal() {
 
 function modalCalculate() {
     if (isValidModalInput(input_z.value)) {
-        
+
     } else {
         requestAnimationFrame(showModalError);
     }
@@ -162,4 +162,5 @@ function isValidModalInput(z) {
 function showModalError() {
     if (current_modal == "pd")
         modal_output.textContent = "input must be between 9 and 90";
+    input_z.focus();
 }
