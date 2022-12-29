@@ -72,13 +72,8 @@ function handleNearPD() {
         output.textContent = "y input must be between 10 and 80";
         return;
     }
-    if (!input_z.value) {
-        current_modal = "pd";
-        setupModal();
-    } else {
-        const result = nearPD(input_y.value, input_z.value);
-        output.textContent = result;
-    }
+    current_modal = "pd";
+    setupModal();
 }
 
 
@@ -126,6 +121,8 @@ function closeModal() {
 
 function actuallyCloseModal() {
     modal.style.display = "none";
+    modal_output.textContent = "";
+    input_z.value = "";
     input_y.focus();
 }
 
