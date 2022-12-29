@@ -3,6 +3,7 @@ const input_z = document.getElementById("input_z");
 const output = document.getElementById("output");
 const modal = document.getElementById("modal_wrap");
 const modal_description = document.getElementById("modal_description");
+const modal_output = document.getElementById("modal_output");
 
 let current_modal = "pd";
 
@@ -143,4 +144,22 @@ function setupModal() {
     output.textContent = "";
     modal.style.display = "block";
     input_z.focus();
+}
+
+function modalCalculate() {
+    if (isValidModalInput(input_z.value)) {
+        
+    } else {
+        requestAnimationFrame(showModalError);
+    }
+}
+
+function isValidModalInput(z) {
+    if (current_modal == "pd") return z > 9 && z < 90;
+    return false;
+}
+
+function showModalError() {
+    if (current_modal == "pd")
+        modal_output.textContent = "input must be between 9 and 90";
 }
