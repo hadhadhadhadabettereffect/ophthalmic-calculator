@@ -57,7 +57,7 @@ function outputKToRadius() {
 function handleNearPD() {
     const y = input_y.value;
     if (y <= 10 || y >= 80) {
-        output.textContent = "y input must be between 10 and 80";
+        output.textContent = "input must be between 10 and 80";
         return;
     }
     current_modal = "pd";
