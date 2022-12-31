@@ -153,11 +153,13 @@ function modalCalculate() {
 
 function isValidModalInput(z) {
     if (current_modal == "pd") return z > 9 && z < 90;
-    return false;
+    else return z > 3 && z < 28;
 }
 
 function showModalError() {
     if (current_modal == "pd")
         modal_output.textContent = "input must be between 9 and 90";
+    else
+        modal_output.textContent = "input must be between 3 and 28";
     input_z.focus();
 }
