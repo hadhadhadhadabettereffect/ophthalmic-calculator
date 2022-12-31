@@ -131,7 +131,7 @@ function setupModal() {
 
 function modalCalculate() {
     if (isValidModalInput(input_z.value)) {
-
+        requestAnimationFrame(showModalResult);
     } else {
         requestAnimationFrame(showModalError);
     }
@@ -148,4 +148,11 @@ function showModalError() {
     else
         modal_output.textContent = "input must be between 3 and 28";
     input_z.focus();
+}
+
+function showModalResult() {
+    if (current_modal == "pd") {
+        output.textContent = nearPD(input_y.value, input_z.value);
+    }
+    actuallyCloseModal();
 }
