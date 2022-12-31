@@ -94,8 +94,6 @@ function kToRadius(y) {
 }
 
 function nearPD(y, z) {
-    if (y <= 10 || y >= 80) return "y input must be between 10 and 80";
-    if (z <= 9 || z >= 90) return "z input must be between 9 and 90";
     const inset = ((y / 2) * 27) / ((10 * z) + 27);
     return (y - (2 * inset)).toFixed(2);
 }
