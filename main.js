@@ -17,6 +17,8 @@ function handleButton(a) {
         case 4: requestAnimationFrame(outputRadiusToK); break;
         case 5: requestAnimationFrame(outputKToRadius); break;
         case 6: requestAnimationFrame(handleNearPD); break;
+        case 7: requestAnimationFrame(handleToContactLens); break;
+        case 8: requestAnimationFrame(handleToSpectacle); break;
         default: break;
     }
 }
@@ -62,6 +64,26 @@ function handleNearPD() {
     setupModal();
 }
 
+function handleToContactLens() {
+    const y = input_y.value;
+    if (y == 0 || y < -60 || y > 60) {
+        output.textContent = "input must be between -60 and 60";
+        return;
+    }
+    current_modal = "contact";
+    setupModal();
+}
+
+function handleToSpectacle() {
+    const y = input_y.value;
+    if (y == 0 || y < -60 || y > 60) {
+        output.textContent = "input must be between -60 and 60";
+        return;
+    }
+    current_modal = "spectacle";
+    setupModal();
+}
+
 
 function cmToDiopters(y) {
     if (y <= 0 || y >= 500) return "input must be between 0 and 500";
@@ -99,11 +121,11 @@ function nearPD(y, z) {
 }
 
 function toContactLens(y, z) {
-    return 1000 / ((1000 / y) - z);
+    return (1000 / ((1000 / y) - z)).toFixed(2);
 }
 
 function toSpectacle(y, z) {
-    return 1000 / ((1000 / y) + z);
+    return (1000 / ((1000 / y) + z)).toFixed(2);
 }
 
 
@@ -159,6 +181,10 @@ function showModalError() {
 function showModalResult() {
     if (current_modal == "pd") {
         output.textContent = nearPD(input_y.value, input_z.value);
+    } else if (current_modal == "contact") {
+        output.textContent = toContactLens(input_y.value, input_z.value);
+    } else if (current_modal == "spectacle") {
+        output.textContent = toSpectacle(input_y.value, input_z.value);
     }
     actuallyCloseModal();
 }
