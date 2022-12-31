@@ -98,6 +98,14 @@ function nearPD(y, z) {
     return (y - (2 * inset)).toFixed(2);
 }
 
+function toContactLens(y, z) {
+    return 1000 / ((1000 / y) - z);
+}
+
+function toSpectacle(y, z) {
+    return 1000 / ((1000 / y) + z);
+}
+
 
 function closeModal() {
     requestAnimationFrame(actuallyCloseModal);
