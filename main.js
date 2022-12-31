@@ -7,33 +7,19 @@ const modal_output = document.getElementById("modal_output");
 
 let current_modal = "pd";
 
-document.getElementById("button_a").addEventListener("click", function (event) {
-    requestAnimationFrame(outputCmToDiopters);
-});
 
-document.getElementById("button_b").addEventListener("click", function (event) {
-    requestAnimationFrame(outputInchesToDiopters);
-});
-
-document.getElementById("button_c").addEventListener("click", function (event) {
-    requestAnimationFrame(outputDioptersToCm);
-});
-
-document.getElementById("button_d").addEventListener("click", function (event) {
-    requestAnimationFrame(outputDioptersToInches);
-});
-
-document.getElementById("button_e").addEventListener("click", function (event) {
-    requestAnimationFrame(outputRadiusToK);
-});
-
-document.getElementById("button_f").addEventListener("click", function (event) {
-    requestAnimationFrame(outputKToRadius);
-});
-
-document.getElementById("button_g").addEventListener("click", function (event) {
-    requestAnimationFrame(handleNearPD);
-})
+function handleButton(a) {
+    switch (a) {
+        case 0: requestAnimationFrame(outputCmToDiopters); break;
+        case 1: requestAnimationFrame(outputInchesToDiopters); break;
+        case 2: requestAnimationFrame(outputDioptersToCm); break;
+        case 3: requestAnimationFrame(outputDioptersToInches); break;
+        case 4: requestAnimationFrame(outputRadiusToK); break;
+        case 5: requestAnimationFrame(outputKToRadius); break;
+        case 6: requestAnimationFrame(handleNearPD); break;
+        default: break;
+    }
+}
 
 
 function outputCmToDiopters() {
