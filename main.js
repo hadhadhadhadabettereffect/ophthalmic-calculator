@@ -179,12 +179,14 @@ function showModalError() {
 }
 
 function showModalResult() {
+    var y = input_y.value;
+    var z = Number(input_z.value);
     if (current_modal == "pd") {
-        output.textContent = nearPD(input_y.value, input_z.value);
+        output.textContent = nearPD(y, z);
     } else if (current_modal == "contact") {
-        output.textContent = toContactLens(input_y.value, input_z.value);
+        output.textContent = toContactLens(y, z);
     } else if (current_modal == "spectacle") {
-        output.textContent = toSpectacle(input_y.value, input_z.value);
+        output.textContent = toSpectacle(y, z);
     }
     actuallyCloseModal();
 }
