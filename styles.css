@@ -1,3 +1,7 @@
+body {
+    background: #ccc;
+}
+
 button {
     padding: 8px 16px;
     font-size: 1em;
