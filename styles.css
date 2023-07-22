@@ -57,5 +57,7 @@ h2 {
 .buttonGroup {
     background: #eee;
     padding: 4px 20px 20px;
-    margin: 0 0 13px;
+    margin: 0 10px 13px;
+    width: fit-content;
+    float: left;
 }
