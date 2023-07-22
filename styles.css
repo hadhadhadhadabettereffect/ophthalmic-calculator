@@ -18,6 +18,12 @@ h2 {
     margin: 0 auto;
 }
 
+@media (max-width: 650px) {
+    #bodyWrap {
+        flex-direction: column;
+    }
+}
+
 #modal_wrap {
     display: none;
     position: fixed;
