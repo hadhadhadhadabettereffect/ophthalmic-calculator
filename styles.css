@@ -8,6 +8,12 @@ button {
     font-weight: bold;
 }
 
+#bodyWrap {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 #modal_wrap {
     display: none;
     position: fixed;
